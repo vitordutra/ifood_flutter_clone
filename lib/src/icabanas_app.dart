@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ifood_flutter_clone/src/screens/get_started/get_started_screen.dart';
+import 'package:ifood_flutter_clone/src/screens/login_screen/login_screen.dart';
 
 class ICabanasApp extends StatelessWidget {
   const ICabanasApp({Key? key}) : super(key: key);
@@ -8,15 +9,25 @@ class ICabanasApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "iCabañas",
-      home: const GetStartedScreen(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const GetStartedScreen(),
+        "/login": (context) => const LoginScreen(),
+      },
       theme: ThemeData(
         primaryColor: const Color(0xFFFA4A0C),
         textTheme: const TextTheme(
           headline1: TextStyle(
-              fontFamily: "SFpro", fontSize: 65, color: Color(0xFFFFFFFF)),
+            fontFamily: "SFPro",
+            fontSize: 62,
+            height: 0.8,
+            fontWeight: FontWeight.w800,
+            color: Color(0xFFFFFFFF),
+          ),
           button: TextStyle(
-            fontFamily: "SFpro",
+            fontFamily: "SFPro",
             fontSize: 17,
+            fontWeight: FontWeight.w600,
             color: Color(0xFFF6F6F9),
           ),
         ),
